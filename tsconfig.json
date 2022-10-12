@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES2020",
     "module": "CommonJS",
     "lib": ["ESNext", "DOM"],
     "outDir": "./dist",
@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "strictNullChecks": false
-  },
+    "strictNullChecks": false,
+    "noImplicitAny": true
+  }
 }
