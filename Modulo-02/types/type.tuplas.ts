@@ -25,11 +25,11 @@ let resultado = listaPessoas(['Fabricio', 'Eloá'], [36, 1])
 console.log(resultado);
 
 
-type Nome = 
+type Nome =
     |
         [primeiroNome: string, sobreNome: string]
     |
-        [primeiroNome: string, nomeMeio: string, sobreNome: string]    
+        [primeiroNome: string, nomeMeio: string, sobreNome: string]
 
 function criarPessoa(...nome: Nome) {
     return [...nome]
@@ -37,3 +37,36 @@ function criarPessoa(...nome: Nome) {
 
 console.log(criarPessoa('Fabricio', 'Feitosa de Castro'));
 console.log(criarPessoa('Fabricio', 'Feitosa', 'de Castro'));
+
+
+
+// Generic     ///******************** */
+
+type Usuario = { 
+  nome: string
+  email: string
+}
+
+type Admin = {
+  nome: string
+  email: string
+  admin: true
+}
+
+const usuario : Usuario = {
+  nome: 'Fabricio',
+  email: 'fabriciofeitosacastro@gmail.com',
+}
+
+const admin: Admin = {
+  nome: 'Fabricio',
+  email: 'fabriciofeitosacastro@gmail.com',
+  admin: true
+}
+
+function acessarSistama<T>(usuario: T): T {
+    return usuario
+}
+
+console.log(acessarSistama<Usuario>(usuario))
+console.log(acessarSistama<Admin>(admin));
